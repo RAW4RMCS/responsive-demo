@@ -23,23 +23,12 @@ export class ToolbarComponent implements OnInit {
   constructor(private deviceService: DeviceService) {}
 
   ngOnInit(): void {
-    this.devices = this.deviceService.devices;
+    const devices = this.deviceService.devices;
+    this.devices = devices;
 
-    const selectedDevice = this.devices[0];
-    const deviceName = selectedDevice.deviceName;
-    const orientation = selectedDevice.orientations[0];
-    const color = selectedDevice.colors[0];
-    const size = selectedDevice.size;
-
-    this.originalDevice = selectedDevice;
-    this.selectDeviceEvent.emit({
-      deviceName,
-      color,
-      orientation,
-      size,
-    });
-
-    this.urlEvent.emit('https://dev.appless.app/6CN4X0/142AO6');
+    this.originalDevice = devices.find(
+      (d) => d.deviceName === this.selectedDevice.deviceName
+    );
   }
 
   handleUrlChange(url: string) {
