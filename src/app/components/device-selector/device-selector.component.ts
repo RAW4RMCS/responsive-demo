@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, SecurityContext } from '@angular/core';
-import { SelectMultipleControlValueAccessor } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { DeviceSize } from 'interfaces/device-size.interface';
 import { selectedDevice } from 'interfaces/selected-device.interface';
