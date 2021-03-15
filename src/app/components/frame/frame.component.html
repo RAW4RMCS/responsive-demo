@@ -1,0 +1,14 @@
+<div>
+  <app-toolbar
+    [selectedDevice]="selectedDevice"
+    (selectDeviceEvent)="handleSelectDevice($event)"
+    [url]="url"
+    (urlEvent)="handleUrlChange($event)"
+  ></app-toolbar>
+  <app-content>
+    <app-device-selector
+      [selectedDevice]="selectedDevice"
+      [url]="url"
+    ></app-device-selector>
+  </app-content>
+</div>

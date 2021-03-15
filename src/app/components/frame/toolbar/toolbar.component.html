@@ -1,0 +1,49 @@
+<mat-toolbar>
+  <!-- <span>My App</span> -->
+  <input
+    class="input"
+    matInput
+    [ngModel]="url"
+    (change)="handleUrlChange($event.target.value)"
+  />
+  <button class="button" (click)="handleUrlSubmit()">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+  <span class="spacer"></span>
+
+  <mat-form-field appearance="fill">
+    <mat-select
+      [value]="selectedDevice.deviceName"
+      (valueChange)="handleDeviceChange($event)"
+    >
+      <mat-option *ngFor="let device of devices" [value]="device.deviceName">
+        {{ device.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-select
+      [value]="selectedDevice.orientation"
+      (valueChange)="handleOrientationChange($event)"
+    >
+      <mat-option
+        *ngFor="let orientation of originalDevice.orientations"
+        [value]="orientation"
+      >
+        {{ orientation }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-select
+      [value]="selectedDevice.color"
+      (valueChange)="handleColorChange($event)"
+    >
+      <mat-option *ngFor="let color of originalDevice.colors" [value]="color">
+        {{ color }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar>

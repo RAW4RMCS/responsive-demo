@@ -1,0 +1,18 @@
+@import "html5-device-mockups/dist/device-mockups.min.css";
+
+.container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 24px;
+}
+
+.screen {
+  pointer-events: all !important;
+  overflow: hidden;
+}
+
+.device-wrapper {
+  max-width: var(--width);
+  max-height: var(--height);
+}

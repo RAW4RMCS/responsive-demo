@@ -1,0 +1,25 @@
+<!-- <div class="container"> -->
+<div class="container">
+  <div
+    class="device-wrapper"
+    [style.--width]="width + 'px'"
+    [style.--height]="height + 'px'"
+  >
+    <div
+      class="device"
+      [attr.data-device]="selectedDevice.deviceName"
+      [attr.data-orientation]="selectedDevice.orientation"
+      [attr.data-color]="selectedDevice.color"
+    >
+      <div class="screen">
+        <iframe
+          class="iframe"
+          [src]="unsafeUrl"
+          width="100%"
+          height="100%"
+        ></iframe>
+      </div>
+      <div class="button"></div>
+    </div>
+  </div>
+</div>
